@@ -1,0 +1,72 @@
+@import '././src/assets/utils/_vars'
+
+.header
+  display: flex
+  width: 100%
+  justify-content: space-between
+  align-items: center
+  padding-top: 20px
+  margin-bottom: 30px
+
+  .left
+    display: flex
+    width: 60%
+    align-items: center
+
+    .logo_img
+      margin-right: 20px
+
+    .title
+      font-size: 25px
+      font-weight: 700
+      color: $blue
+      text-transform: uppercase
+
+  .right
+    display: flex
+    width: 40%
+    justify-content: flex-end
+    align-items: center
+
+    .btn
+      background-color: transparent
+      border: none
+      cursor: pointer
+      .btn_img
+        display: block
+
+    .form
+      margin-left: 20px
+      position: relative
+
+
+      .input
+        background-color: $gray
+        border: none
+        border-radius: 10px
+        width: 194px
+        padding: 6px 40px 6px 20px
+        font-size: 16px
+        color: $white
+        cursor: pointer
+        box-shadow: 0 6px 6px rgba($shadow, .5)
+
+
+        &::placeholder
+          font-size: 16px
+          color: $white
+
+        &:focus-visible
+          outline: $blue solid 1px
+
+      .input_img
+        display: block
+        width: 20px
+        height: 20px
+        position: absolute
+        top: 50%
+        right: 0
+        z-index: 100
+        transform: translateY(-50%)
+        margin-right: 10px
+        cursor: pointer

@@ -1,0 +1,39 @@
+@import '././src/assets/utils/_vars'
+
+.thisDayInfo
+  width: 750px
+  min-width: 521px
+  padding: 42px 32px
+  background-color: $gray
+  border-radius: 20px
+  box-shadow: 0 6px 6px rgba($shadow, .5)
+  position: relative
+  overflow: hidden
+
+  .wrapper
+    display: flex
+    align-items: center
+    &:not(:last-child)
+      margin-bottom: 21px
+
+    .icon
+      display: block
+      width: 38px
+      height: 38px
+      padding: 5px
+      margin-right: 20px
+      border-radius: 50%
+      background-color: $white
+      box-shadow: 1px 4px 10px rgba($blue, .2)
+
+    .title
+      width: 94px
+      color: $grayFont
+      margin-right: 20px
+
+  .bgImg
+    display: block
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 100
