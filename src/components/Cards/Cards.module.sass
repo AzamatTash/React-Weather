@@ -1,0 +1,55 @@
+@import 'src/assets/utils/_vars.sass'
+@mixin myMixin($fz, $fw, $mb, $cl)
+  font-size: $fz
+  font-weight: $fw
+  margin-bottom: $mb
+  color: $cl
+
+.wrapperMain
+  display: flex
+  justify-content: space-between
+  width: 100%
+  min-width: 891px
+  height: 240px
+  background-color: $gray
+  border-radius: 20px
+  padding: 20px
+
+  .wrapperCard
+    width: 170px
+    height: 200px
+    padding: 11px
+    background-color: $bgCards
+    border-radius: 10px
+    box-shadow: 0 3px 10px 0 rgba($bgCards, 0.28)
+    cursor: pointer
+    transition: background-color linear 0.2s
+
+    &:not(:last-child)
+      margin-right: 5px
+
+    &:hover
+      background-color: lighten($bgCards, 2%)
+
+    .title
+      @include myMixin(18px, 500, 7px, $white)
+
+    .date
+      @include myMixin(14px, 400, 7px, $grayFont)
+
+    .icon
+      display: block
+      width: 80px
+      height: 80px
+      margin: 0 0 11px 33px
+
+    .weatherData
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      .temp
+        @include myMixin(20px, 500, 0, $white)
+
+      .description
+        @include myMixin(14px, 400, 0, $grayFont)

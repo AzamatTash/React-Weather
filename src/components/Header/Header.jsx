@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Header.module.sass'
-import logoIcon from '../../assets/img/logo-icon.svg'
+import logoIcon from '../../assets/img/weather-logo.png'
 import themeInvertIcon from '../../assets/img/theme-colors-icon.svg'
 import searchIcon from '../../assets/img/search-icon.png'
 

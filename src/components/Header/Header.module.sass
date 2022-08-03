@@ -5,8 +5,7 @@
   width: 100%
   justify-content: space-between
   align-items: center
-  padding-top: 20px
-  margin-bottom: 30px
+  margin: 15px 0 25px
 
   .left
     display: flex
@@ -14,6 +13,9 @@
     align-items: center
 
     .logo_img
+      display: block
+      width: 65px
+      height: 65px
       margin-right: 20px
 
     .title
@@ -49,12 +51,14 @@
         font-size: 16px
         color: $white
         cursor: pointer
-        box-shadow: 0 6px 6px rgba($shadow, .5)
-
+        transition: background-color linear 0.2s
 
         &::placeholder
           font-size: 16px
           color: $white
+
+        &:hover
+          background-color: darken($gray, 3%)
 
         &:focus-visible
           outline: $blue solid 1px
