@@ -1,18 +1,19 @@
 import React from 'react';
 import classes from './ThisDay.module.sass'
-import sun from '../../assets/img/sun.svg'
+// import sun from '../../assets/img/sun.svg'
 import {connect} from "react-redux";
 
 const ThisDay = (props) => {
     return (
         <div className={classes.thisDay}>
             <div className={classes.wrapper}>
-                <div>
+                <div className={classes.itemLeft}>
                     <div className={classes.temp}>{props.temp}°</div>
                     <h1 className={classes.weekDay}>{props.weekDay}</h1>
                 </div>
-                <div>
-                    <img className={classes.currenWeatherIcon} src={sun } alt="sun"/>
+                <div className={classes.itemRight}>
+                    <img className={classes.currenWeatherIcon}
+                         src={`https://openweathermap.org/img/wn/${props.icon}@4x.png`} alt="icon"/>
                 </div>
             </div>
             <time className={classes.time}>Время: {props.time}</time>
@@ -23,10 +24,11 @@ const ThisDay = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        temp: state.thisDayReducer.temp,
-        weekDay: state.thisDayReducer.weekDay,
-        time: state.thisDayReducer.time,
-        cityName: state.thisDayReducer.cityName
+        temp: state.weatherReducer.temp,
+        weekDay: state.weatherReducer.weekDay,
+        time: state.weatherReducer.time,
+        cityName: state.weatherReducer.cityName,
+        icon: state.weatherReducer.icon
     }
 }
 

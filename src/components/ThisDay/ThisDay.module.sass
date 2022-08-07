@@ -1,7 +1,7 @@
 @import '././src/assets/utils/_vars'
 
 .thisDay
-  width: 400px
+  width: 350px
   min-width: 320px
   height: 250px
   margin-right: 50px
@@ -13,21 +13,27 @@
     display: flex
     justify-content: space-between
 
-    .temp
-      font-size: 96px
-      font-weight: 500
-      line-height: 0.7
-      color: $blue
-      margin-bottom: 10px
+    .itemLeft
+      width: 150px
 
-    .weekDay
-      font-size: 40px
-      font-weight: 400
+      .temp
+        font-size: 96px
+        font-weight: 500
+        line-height: 0.7
+        color: $blue
+        margin-bottom: 10px
 
-    .currenWeatherIcon
-      display: block
-      width: 119px
-      height: 119px
+      .weekDay
+        font-size: 40px
+        font-weight: 400
+
+    .itemRight
+      width: 130px
+
+      .currenWeatherIcon
+          display: block
+          width: 130px
+          height: 130px
 
   .time,
   .currentCity

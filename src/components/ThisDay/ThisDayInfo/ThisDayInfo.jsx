@@ -5,6 +5,7 @@ import humidityIcon from '../../../assets/img/humidity-icon.svg'
 import precipitationIcon from '../../../assets/img/precipitation-icon.svg'
 import windIcon from '../../../assets/img/wind-icon.svg'
 import cloudBgImg from '../../../assets/img/cloud-image.png'
+import {connect} from "react-redux";
 
 const ThisDayInfo = (props) => {
     return (
@@ -13,25 +14,37 @@ const ThisDayInfo = (props) => {
             <div className={classes.wrapper}>
                 <img className={classes.icon} src={thermometerIcon} alt="thermometerIcon"/>
                 <div className={classes.title}>Температура</div>
-                <div>{' 20'}° - ощущается как {'17'}°</div>
+                <div>{props.temp}° - ощущается как {props.feelsLike}°</div>
             </div>
             <div className={classes.wrapper}>
                 <img className={classes.icon} src={humidityIcon} alt="humidityIcon"/>
                 <div className={classes.title}>Давление</div>
-                <div>{'765'} мм ртутного столба - нормальное</div>
+                <div>{props.pressure} мм ртутного столба - нормальное</div>
             </div>
             <div className={classes.wrapper}>
                 <img className={classes.icon} src={precipitationIcon} alt="precipitationIcon"/>
-                <div className={classes.title}>Осадки</div>
-                <div>Без осадков</div>
+                <div className={classes.title}>Влажность</div>
+                <div>{props.humidity} % - {props.description}</div>
             </div>
             <div className={classes.wrapper}>
                 <img className={classes.icon} src={windIcon} alt="windIcon"/>
                 <div className={classes.title}>Ветер</div>
-                <div>{'3'} м/с {'юго-запад'} - легкий ветер</div>
+                <div>{props.windSpeed} м/с {props.windDirection} - легкий ветер</div>
             </div>
         </div>
     );
 };
 
-export default ThisDayInfo;
+const mapStateToProps = (state) => {
+    return {
+        temp: state.weatherReducer.temp,
+        feelsLike: state.weatherReducer.feelsLike,
+        pressure: state.weatherReducer.pressure,
+        humidity: state.weatherReducer.humidity,
+        windSpeed: state.weatherReducer.wind.speed,
+        windDirection: state.weatherReducer.wind.direction,
+        description: state.weatherReducer.description
+    }
+}
+
+export default connect(mapStateToProps)(ThisDayInfo);

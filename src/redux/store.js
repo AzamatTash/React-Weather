@@ -1,5 +1,5 @@
 import {configureStore, getDefaultMiddleware} from "@reduxjs/toolkit";
-import {thisDayReducer} from "./Reducers/thisDayReducer";
+import {weatherReducer} from "./reducers/weatherReducer";
 
 const middleware = getDefaultMiddleware({
     immutableCheck: false,
@@ -8,7 +8,7 @@ const middleware = getDefaultMiddleware({
 });
 
 export const store = configureStore({
-    reducer: {thisDayReducer},
+    reducer: {weatherReducer},
     middleware,
     devTools: process.env.NODE_ENV !== 'production'
 });
