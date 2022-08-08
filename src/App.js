@@ -5,18 +5,17 @@ import ThisDayInfo from "./components/ThisDay/ThisDayInfo/ThisDayInfo";
 import CardsToggle from "./components/Cards/CardsToggle/CardsToggle";
 import Cards from "./components/Cards/Cards";
 
-const App = (props) => {
-  return (
-    <div className={classes.container}>
-        <Header/>
-        <div className={classes.currentDay}>
-            <ThisDay/>
-            <ThisDayInfo/>
+const App = () => {
+    return (
+        <div className={classes.container}>
+            <Header/>
+            <div className={classes.currentDay}>
+                <ThisDay/>
+                <ThisDayInfo/>
+            </div>
+            <Cards/>
         </div>
-        <CardsToggle/>
-        <Cards/>
-    </div>
-  );
+    );
 }
 
 export default App;

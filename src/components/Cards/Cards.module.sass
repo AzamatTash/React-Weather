@@ -16,7 +16,8 @@
   padding: 20px
 
   .wrapperCard
-    width: 170px
+    max-width: 180px
+    min-width: 180px
     height: 200px
     padding: 11px
     background-color: $bgCards
@@ -31,9 +32,6 @@
     &:hover
       background-color: lighten($bgCards, 2%)
 
-    .title
-      @include myMixin(18px, 500, 7px, $white)
-
     .date
       @include myMixin(14px, 400, 7px, $grayFont)
 
@@ -41,7 +39,7 @@
       display: block
       width: 80px
       height: 80px
-      margin: 0 0 11px 33px
+      margin: 0 0 0 33px
 
     .weatherData
       display: flex
@@ -51,5 +49,9 @@
       .temp
         @include myMixin(20px, 500, 0, $white)
 
-      .description
-        @include myMixin(14px, 400, 0, $grayFont)
+      .title
+        @include myMixin(16px, 400, 0, $white)
+
+    .description
+      text-align: center
+      @include myMixin(14px, 400, 0, $grayFont)

@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './ThisDay.module.sass'
-// import sun from '../../assets/img/sun.svg'
 import {connect} from "react-redux";
 
 const ThisDay = (props) => {

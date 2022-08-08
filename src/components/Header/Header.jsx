@@ -4,7 +4,8 @@ import logoIcon from '../../assets/img/weather-logo.png'
 import themeInvertIcon from '../../assets/img/theme-colors-icon.svg'
 import searchIcon from '../../assets/img/search-icon.png'
 import {connect} from "react-redux";
-import {fetchWeatherCurrentDay, setCurrentCity, weatherReducer} from "../../redux/reducers/weatherReducer";
+import {fetchWeatherCurrentDay, setCurrentCity} from "../../redux/reducers/weatherReducer";
+import {fetchForecast} from "../../redux/reducers/forecastReducer";
 
 const Header = (props) => {
     const [cityName, setCityName] = React.useState();
@@ -14,8 +15,8 @@ const Header = (props) => {
     };
 
     const onClick = (e) => {
-        props.setCurrentCity(cityName);
         e.preventDefault();
+        props.setCurrentCity(cityName);
     };
 
     React.useEffect(() => {
@@ -34,7 +35,9 @@ const Header = (props) => {
                 </button>
                 <form className={classes.form}>
                     <input onChange={onChangeCityName} className={classes.input} placeholder='поиск...' type='text'/>
-                    <img onClick={onClick} className={classes.input_img} src={searchIcon} alt='Поиск'/>
+                    <button onClick={onClick} className={classes.btn}>
+                        <img  className={classes.input_img} src={searchIcon} alt='Поиск'/>
+                    </button>
                 </form>
             </div>
         </div>
@@ -47,4 +50,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps,{fetchWeatherCurrentDay, setCurrentCity})(Header);
+export default connect(mapStateToProps,{fetchWeatherCurrentDay, fetchForecast, setCurrentCity})(Header);
