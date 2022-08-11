@@ -1,8 +1,13 @@
 import React from 'react';
 import classes from './ThisDay.module.sass'
-import {connect} from "react-redux";
+import {connect} from 'react-redux';
+import {fetchWeatherCurrentDay} from "../../redux/reducers/weatherReducer";
 
 const ThisDay = (props) => {
+    React.useEffect(() => {
+        props.fetchWeatherCurrentDay(props.currentCity);
+    },[props.currentCity]);
+
     return (
         <div className={classes.thisDay}>
             <div className={classes.wrapper}>
@@ -23,6 +28,7 @@ const ThisDay = (props) => {
 
 const mapStateToProps = (state) => {
     return {
+        currentCity: state.weatherReducer.currentCity,
         temp: state.weatherReducer.temp,
         weekDay: state.weatherReducer.weekDay,
         time: state.weatherReducer.time,
@@ -31,4 +37,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(ThisDay);
+export default connect(mapStateToProps, {fetchWeatherCurrentDay})(ThisDay);

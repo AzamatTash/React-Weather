@@ -1,14 +1,16 @@
-@import '././src/assets/utils/_vars'
+@import '../../../assets/utils/vars'
 
 .thisDayInfo
   width: 800px
   min-width: 521px
   height: 250px
   padding: 20px
-  background-color: $gray
+  background-color: var(#{--components-background-default})
   border-radius: 20px
   position: relative
   overflow: hidden
+  box-shadow: 10px 10px 21px var(#{--components-shadow-default})
+
 
   .wrapper
     display: flex

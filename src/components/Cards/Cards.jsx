@@ -14,15 +14,19 @@ const Cards = (props) => {
 
     const cardElement = props.list.map(card => {
         return (
-            <div className={classes.wrapperCard}>
-                <div className={classes.weatherData}>
-                    <time className={classes.title}>{getConvertDate(card.dt)}</time>
-                    <div className={classes.temp}>{Math.round(card.main.temp)}°</div>
+            <div className={classes.wrapperCard} >
+                <div className={classes.header}>
+                    <div className={classes.weatherData}>
+                        <time className={classes.date}>{getConvertDate(card.dt)}</time>
+                        <div className={classes.temp}>{Math.round(card.main.temp)}°</div>
+                    </div>
+                    <time className={classes.time}>{getConvertTime(card.dt)}</time>
                 </div>
-                <time className={classes.date}>{getConvertTime(card.dt)}</time>
                 <img className={classes.icon} src={`https://openweathermap.org/img/wn/${card.weather[0].icon}@4x.png`}
                      alt="icon"/>
-                <div className={classes.description}>{card.weather[0].description}</div>
+                <div className={classes.footer}>
+                    <div className={classes.description}>{card.weather[0].description}</div>
+                </div>
             </div>
         )
     })

@@ -1,5 +1,5 @@
 import {createAction, createReducer} from "@reduxjs/toolkit";
-import {weatherAPI} from "../../api/api";
+import {weatherService} from "../../service/weatherService";
 
 const setDataCards = createAction('setDataCards', ({...data}) => {
     return {payload:{...data}}
@@ -16,6 +16,6 @@ export const forecastReducer = createReducer(initialState, {
 })
 
 export const fetchForecast = (cityName) => async (dispatch) => {
-    const response = await weatherAPI.getForecast(cityName);
+    const response = await weatherService.getForecast(cityName);
     dispatch(setDataCards({...response.data}));
 };

@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from './Header.module.sass'
-import logoIcon from '../../assets/img/weather-logo.png'
+import logoIcon from '../../assets/img/weather-logo.svg'
 import themeInvertIcon from '../../assets/img/theme-colors-icon.svg'
 import searchIcon from '../../assets/img/search-icon.png'
-import {connect} from "react-redux";
-import {fetchWeatherCurrentDay, setCurrentCity} from "../../redux/reducers/weatherReducer";
-import {fetchForecast} from "../../redux/reducers/forecastReducer";
+import {connect} from 'react-redux';
+import {setCurrentCity} from '../../redux/reducers/weatherReducer';
+import {storage} from '../../storage/storage';
 
 const Header = (props) => {
     const [cityName, setCityName] = React.useState();
@@ -16,12 +16,9 @@ const Header = (props) => {
 
     const onClick = (e) => {
         e.preventDefault();
+        storage.setItem('city', cityName);
         props.setCurrentCity(cityName);
     };
-
-    React.useEffect(() => {
-        props.fetchWeatherCurrentDay(props.currentCity);
-    },[props.currentCity]);
 
     return (
         <div className={classes.header}>
@@ -44,10 +41,4 @@ const Header = (props) => {
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        currentCity: state.weatherReducer.currentCity
-    };
-};
-
-export default connect(mapStateToProps,{fetchWeatherCurrentDay, fetchForecast, setCurrentCity})(Header);
+export default connect(null,{setCurrentCity})(Header);

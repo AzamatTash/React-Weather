@@ -1,7 +1,8 @@
 import {createAction, createReducer} from "@reduxjs/toolkit";
-import {weatherAPI} from "../../api/api";
 import {getTime} from "../../assets/utils/getTime";
 import {getDirectionWind} from "../../assets/utils/getDirectionWind";
+import {storage} from "../../storage/storage";
+import {weatherService} from "../../service/weatherService";
 
 export const setCurrentCity = createAction('setCurrentCity', (cityName) => {
     return {payload:{cityName}}
@@ -12,7 +13,7 @@ const setDataCurrentDay = createAction('setDataCurrentDay', ({...data}) => {
 });
 
 const initialState = {
-    currentCity: localStorage.getItem('name') || 'москва',
+    currentCity: storage.getItem('city') || 'москва',
     temp: null,
     feelsLike: null,
     pressure: null,
@@ -30,7 +31,6 @@ const initialState = {
 
 export const weatherReducer = createReducer(initialState, {
     [setCurrentCity]: (state, action) => {
-        localStorage.setItem('name', action.payload.cityName)
         state.currentCity = action.payload.cityName;
     },
 
@@ -50,6 +50,6 @@ export const weatherReducer = createReducer(initialState, {
 })
 
 export const fetchWeatherCurrentDay = (cityName) => async (dispatch) => {
-    const response = await weatherAPI.getWeather(cityName);
+    const response = await weatherService.getWeather(cityName);
     return dispatch(setDataCurrentDay({...response.data}));
 };

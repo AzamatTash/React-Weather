@@ -1,4 +1,4 @@
-@import 'src/assets/utils/_vars.sass'
+@import '../../assets/utils/vars'
 @mixin myMixin($fz, $fw, $mb, $cl)
   font-size: $fz
   font-weight: $fw
@@ -11,14 +11,18 @@
   width: 100%
   min-width: 891px
   height: 240px
-  background-color: $gray
+  background-color: var(#{--components-background-default})
   border-radius: 20px
   padding: 20px
+  box-shadow: 10px 10px 21px var(#{--components-shadow-default})
+
 
   .wrapperCard
+    position: relative
     max-width: 180px
     min-width: 180px
-    height: 200px
+    max-height: 200px
+    min-height: 200px
     padding: 11px
     background-color: $bgCards
     border-radius: 10px
@@ -32,26 +36,33 @@
     &:hover
       background-color: lighten($bgCards, 2%)
 
-    .date
-      @include myMixin(14px, 400, 7px, $grayFont)
+    .header
+      .weatherData
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        .date
+          @include myMixin(16px, 400, 0, $white)
+
+        .temp
+          @include myMixin(20px, 500, 0, $white)
+
+      .time
+        @include myMixin(14px, 400, 7px, $grayFont)
+
+
+    .footer
+      margin-top: 78px
+      .description
+        text-align: center
+        @include myMixin(14px, 400, 0, $grayFont)
+
 
     .icon
-      display: block
-      width: 80px
-      height: 80px
-      margin: 0 0 0 33px
-
-    .weatherData
-      display: flex
-      justify-content: space-between
-      align-items: center
-
-      .temp
-        @include myMixin(20px, 500, 0, $white)
-
-      .title
-        @include myMixin(16px, 400, 0, $white)
-
-    .description
-      text-align: center
-      @include myMixin(14px, 400, 0, $grayFont)
+        display: block
+        position: absolute
+        top: 100px - 40px
+        left: 90px - 40px
+        width: 80px
+        height: 80px

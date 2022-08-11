@@ -1,13 +1,14 @@
-@import '././src/assets/utils/_vars'
+@import '../../assets/utils/vars'
 
 .thisDay
   width: 350px
   min-width: 320px
   height: 250px
   margin-right: 50px
-  background-color: $gray
+  background-color: var(#{--components-background-default})
   border-radius: 20px
   padding: 20px
+  box-shadow: 10px 10px 21px var(#{--components-shadow-default})
 
   .wrapper
     display: flex

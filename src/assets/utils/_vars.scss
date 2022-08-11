@@ -1,0 +1,20 @@
+$bc-dark: #0D1117;
+$blue: #009DDC;
+$gray: #606060;
+$white: #EFECCA;
+$grayFont: #939CB0;
+$shadow: #B4B4B4;
+$bgCards: #3b3b3d;
+
+:root {
+  --body-background-dark: #0D1117;
+  --body-background-light: #EFECCA;
+  --body-background-default: var(#{--body-background-light});
+
+  --components-background-dark: #606060;
+  --components-background-light: #cbc9c9;
+  --components-background-default: var(#{--components-background-light});
+
+  --components-shadow-light: #a6a6a6;
+  --components-shadow-default: var(#{--components-shadow-light});
+}
