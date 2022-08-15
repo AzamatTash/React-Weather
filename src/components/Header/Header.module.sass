@@ -43,33 +43,30 @@
 
 
       .input
-        background-color: $gray
+        background-color: var(#{--card-background-default})
+        box-shadow: 10px 10px 21px var(#{--components-shadow-default})
         border: none
         border-radius: 10px
         width: 194px
         padding: 6px 40px 6px 20px
         font-size: 16px
-        color: $white
+        color: var(#{--font-default})
         cursor: pointer
-        transition: background-color linear 0.2s
 
         &::placeholder
           font-size: 16px
           color: $grayFont
 
-        &:hover
-          background-color: darken($gray, 3%)
-
         &:focus-visible
           outline: $blue solid 1px
 
-      .input_img
+      .btn
         display: block
-        width: 20px
-        height: 20px
+        width: 33px
+        height: 33px
         position: absolute
         top: 50%
-        right: 15px
+        right: 0
         z-index: 100
         transform: translateY(-50%)
         margin-right: 10px

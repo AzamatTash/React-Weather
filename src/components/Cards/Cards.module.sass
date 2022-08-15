@@ -15,7 +15,10 @@
   border-radius: 20px
   padding: 20px
   box-shadow: 10px 10px 21px var(#{--components-shadow-default})
-
+  overflow-x: auto
+  overflow-y: hidden
+  &::-webkit-scrollbar
+    width: 0
 
   .wrapperCard
     position: relative
@@ -24,17 +27,12 @@
     max-height: 200px
     min-height: 200px
     padding: 11px
-    background-color: $bgCards
+    background-color: var(#{--card-background-default})
     border-radius: 10px
     box-shadow: 0 3px 10px 0 rgba($bgCards, 0.28)
-    cursor: pointer
-    transition: background-color linear 0.2s
 
     &:not(:last-child)
       margin-right: 5px
-
-    &:hover
-      background-color: lighten($bgCards, 2%)
 
     .header
       .weatherData
@@ -43,10 +41,10 @@
         align-items: center
 
         .date
-          @include myMixin(16px, 400, 0, $white)
+          @include myMixin(16px, 400, 0, var(#{--font-default}))
 
         .temp
-          @include myMixin(20px, 500, 0, $white)
+          @include myMixin(20px, 500, 0, var(#{--font-default}))
 
       .time
         @include myMixin(14px, 400, 7px, $grayFont)

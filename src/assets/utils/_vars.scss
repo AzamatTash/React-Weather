@@ -8,13 +8,26 @@ $bgCards: #3b3b3d;
 
 :root {
   --body-background-dark: #0D1117;
-  --body-background-light: #EFECCA;
+  --body-background-light: #f0f0f3;
   --body-background-default: var(#{--body-background-light});
 
-  --components-background-dark: #606060;
-  --components-background-light: #cbc9c9;
+  --components-background-dark: #4F4F4F;
+  --components-background-light: #f0f0f3;
   --components-background-default: var(#{--components-background-light});
 
-  --components-shadow-light: #a6a6a6;
+  --card-background-dark: #2E3035;
+  --card-background-light: #adcfff;
+  --card-background-default: var(#{--card-background-light});
+
+  --font-dark: #fff;
+  --font-light: #000;
+  --font-default: var(#{--font-dark});
+
+  --btn-next-prev-dark: #fff;
+  --btn-next-prev-light: #4F4F4F;
+  --btn-next-prev-default: var(#{--btn-next-prev-light});
+
+  --components-shadow-dark: #262626;
+  --components-shadow-light: #d3d3d6;
   --components-shadow-default: var(#{--components-shadow-light});
 }
