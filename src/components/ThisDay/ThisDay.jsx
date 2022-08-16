@@ -28,7 +28,7 @@ const ThisDay = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        currentCity: state.weatherReducer.currentCity,
+        currentCity: state.initializationReducer.currentCity,
         temp: state.weatherReducer.temp,
         weekDay: state.weatherReducer.weekDay,
         time: state.weatherReducer.time,

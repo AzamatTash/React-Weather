@@ -1,10 +1,28 @@
 .container
   max-width: 1200px
-  min-width: 700px
   margin: 0 auto
+  padding: 10px
 
 .currentDay
   display: flex
   justify-content: space-between
   margin-bottom: 50px
+  width: 100%
+
+  @media (min-width: 992px) and (max-width: 1199px)
+    margin-bottom: 20px
+
+  @media (min-width: 768px) and (max-width: 991px)
+    margin-bottom: 20px
+
+  @media (min-width: 685px) and (max-width: 767px)
+    margin-bottom: 20px
+
+  @media (min-width: 480px) and (max-width: 684px)
+    margin-bottom: 20px
+    flex-direction: column
+
+  @media (min-width: 320px) and (max-width: 479px)
+    margin-bottom: 20px
+    flex-direction: column
 

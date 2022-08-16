@@ -1,8 +1,16 @@
 @import '../../../assets/utils/vars'
+@mixin myMixin($d, $ps, $t, $l, $zx)
+  display: $d
+  position: $ps
+  top: $t
+  left: $l
+  z-index: $zx
 
 .thisDayInfo
+  display: flex
+  flex-direction: column
+  justify-content: space-between
   width: 800px
-  min-width: 521px
   height: 250px
   padding: 20px
   background-color: var(#{--components-background-default})
@@ -11,12 +19,31 @@
   overflow: hidden
   box-shadow: 10px 10px 21px var(#{--components-shadow-default})
 
+  @media (min-width: 992px) and (max-width: 1199px)
+    height: 280px
+
+  @media (min-width: 768px) and (max-width: 991px)
+    height: 280px
+
+  @media (min-width: 685px) and (max-width: 767px)
+    height: 280px
+
+  @media (min-width: 480px) and (max-width: 684px)
+    width: 100%
+    height: 280px
+
+  @media (min-width: 320px) and (max-width: 479px)
+    width: 100%
+    height: 100%
 
   .wrapper
     display: flex
     align-items: center
     &:not(:last-child)
       margin-bottom: 19px
+
+    @media (min-width: 768px) and (max-width: 848px)
+      position: relative
 
     .icon
       display: block
@@ -33,8 +60,20 @@
       color: $grayFont
       margin-right: 20px
 
+      @media (min-width: 768px) and (max-width: 848px)
+        @include myMixin(block, absolute, -4px, 58px, 100)
+
+      @media (min-width: 685px) and (max-width: 767px)
+        display: none
+
+      @media (min-width: 320px) and (max-width: 479px)
+        display: none
+
     .description
       z-index: 101
+
+      @media (min-width: 768px) and (max-width: 848px)
+        @include myMixin(block, absolute, 18px, 58px, 100)
 
   .bgImg
     display: block
@@ -42,3 +81,18 @@
     top: 0
     right: 0
     z-index: 100
+
+    @media (min-width: 768px) and (max-width: 991px)
+      display: none
+
+    @media (min-width: 685px) and (max-width: 767px)
+      display: none
+
+    @media (min-width: 480px) and (max-width: 684px)
+      display: none
+
+    @media (min-width: 320px) and (max-width: 479px)
+      display: none
+
+
+

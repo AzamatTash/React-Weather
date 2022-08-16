@@ -11,7 +11,11 @@ const initialState = {
 
 export const forecastReducer = createReducer(initialState, {
     [setDataCards]: (state, action) => {
-        state.list = action.payload.list;
+        const list = [];
+        for(let i = 0; i < 6; i++) {
+            list.push(action.payload.list[i])
+        }
+        state.list = list;
     },
 })
 
