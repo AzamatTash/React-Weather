@@ -18,6 +18,7 @@ const Header = (props) => {
         e.preventDefault();
         storage.setItem('city', cityName);
         props.setCurrentCity(cityName);
+        setCityName('');
     };
 
     const onChangeTheme = () => {
@@ -56,7 +57,7 @@ const Header = (props) => {
                     <img className={classes.btn_img} src={themeInvertIcon} alt='Смена темы'/>
                 </button>
                 <form className={classes.form}>
-                    <input onChange={onChangeCityName} className={classes.input} placeholder='поиск...' type='text'/>
+                    <input onChange={onChangeCityName} value={cityName} className={classes.input} placeholder='поиск...' type='text'/>
                     <button onClick={onSend} className={classes.btn} >
                         <img src={searchIcon} alt='Поиск'/>
                     </button>

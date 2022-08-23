@@ -41,10 +41,10 @@
         margin-right: 10px
 
       @media (min-width: 320px) and (max-width: 479px)
-        width: 47px
-        height: 47px
-        @include myMixin(absolute, 0, 100)
-        left: -5px
+        width: 40px
+        height: 41px
+        @include myMixin(absolute, -5px, 100)
+        left: 0
 
     .title
       font-size: 25px
@@ -78,8 +78,8 @@
       display: block
 
       @media (min-width: 320px) and (max-width: 479px)
-        @include myMixin(absolute, 0, 100)
-        right: -5px
+        @include myMixin(absolute, -9px, 100)
+        right: -13px
 
       .btn_img
         display: block
