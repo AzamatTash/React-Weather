@@ -11,7 +11,7 @@ export const setCurrentTheme = createAction('setCurrentTheme', (theme) => {
 
 const initialState = {
     currentCity: storage.getItem('city') || 'москва',
-    currentTheme: storage.getItem('theme') || 'light'
+    currentTheme: storage.getItem('theme') || 'dark'
 }
 
 export const initializationReducer = createReducer(initialState, {

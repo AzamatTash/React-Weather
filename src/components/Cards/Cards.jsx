@@ -3,6 +3,7 @@ import classes from './Cards.module.sass'
 import {fetchForecast} from "../../redux/reducers/forecastReducer";
 import {connect} from "react-redux";
 import {getConvertDate, getConvertTime} from "../../assets/utils/getTime";
+import getWeatherIcon from "../../assets/img/getWeatherIcon";
 
 const Cards = (props) => {
     React.useEffect(() => {
@@ -19,7 +20,7 @@ const Cards = (props) => {
                     </div>
                     <time className={classes.time}>{getConvertTime(card.dt)}</time>
                 </div>
-                <img className={classes.icon} src={`https://openweathermap.org/img/wn/${card.weather[0].icon}@4x.png`}
+                <img className={classes.icon} src={getWeatherIcon(card.weather[0].icon)}
                      alt="icon"/>
                 <div className={classes.footer}>
                     <div className={classes.description}>{card.weather[0].description}</div>

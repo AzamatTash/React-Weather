@@ -6,25 +6,25 @@ $bgCards: #3b3b3d;
 :root {
   --body-background-dark: #0D1117;
   --body-background-light: #f0f0f3;
-  --body-background-default: var(#{--body-background-light});
+  --body-background-default: var(#{--body-background-dark});
 
   --components-background-dark: #4F4F4F;
   --components-background-light: #f0f0f3;
-  --components-background-default: var(#{--components-background-light});
+  --components-background-default: var(#{--components-background-dark});
 
   --card-background-dark: #2E3035;
-  --card-background-light: #adcfff;
-  --card-background-default: var(#{--card-background-light});
+  --card-background-light: #cfe0fc;
+  --card-background-default: var(#{--card-background-dark});
 
   --font-dark: #fff;
   --font-light: #000;
-  --font-default: var(#{--font-dark});
+  --font-default: var(#{--font-light});
 
   --btn-next-prev-dark: #fff;
   --btn-next-prev-light: #4F4F4F;
-  --btn-next-prev-default: var(#{--btn-next-prev-light});
+  --btn-next-prev-default: var(#{--btn-next-prev-dark});
 
   --components-shadow-dark: #262626;
   --components-shadow-light: #d3d3d6;
-  --components-shadow-default: var(#{--components-shadow-light});
+  --components-shadow-default: var(#{--components-shadow-dark});
 }

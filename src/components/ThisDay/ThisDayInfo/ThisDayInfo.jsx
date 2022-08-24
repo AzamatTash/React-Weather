@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './ThisDayInfo.module.sass'
-import thermometerIcon from '../../../assets/img/thermometer-icon.svg'
-import humidityIcon from '../../../assets/img/humidity-icon.svg'
-import precipitationIcon from '../../../assets/img/precipitation-icon.svg'
-import windIcon from '../../../assets/img/wind-icon.svg'
-import cloudBgImg from '../../../assets/img/cloud-image.png'
+import thermometerIcon from '../../../assets/img/clobal-icon/thermometer-icon.svg'
+import humidityIcon from '../../../assets/img/clobal-icon/humidity-icon.svg'
+import precipitationIcon from '../../../assets/img/clobal-icon/precipitation-icon.svg'
+import windIcon from '../../../assets/img/clobal-icon/wind-icon.svg'
+import cloudBgImg from '../../../assets/img/clobal-icon/cloud-image.png'
 import {connect} from "react-redux";
 
 const ThisDayInfo = (props) => {

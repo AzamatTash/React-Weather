@@ -1,8 +1,8 @@
 import React from 'react';
 import classes from './Header.module.sass'
-import logoIcon from '../../assets/img/weather-logo.svg'
-import themeInvertIcon from '../../assets/img/theme-colors-icon.svg'
-import searchIcon from '../../assets/img/search-icon.png'
+import logoIcon from '../../assets/img/clobal-icon/weather-logo.svg'
+import themeInvertIcon from '../../assets/img/clobal-icon/theme-colors-icon.svg'
+import searchIcon from '../../assets/img/clobal-icon/search-icon.png'
 import {connect} from 'react-redux';
 import {storage} from '../../storage/storage';
 import {setCurrentCity, setCurrentTheme} from "../../redux/reducers/initializationReducer";
