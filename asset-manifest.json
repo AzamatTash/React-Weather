@@ -1,21 +1,28 @@
 {
   "files": {
-    "main.css": "/React-Weather/static/css/main.8e4e415f.css",
-    "main.js": "/React-Weather/static/js/main.5ea4fd83.js",
+    "main.css": "/React-Weather/static/css/main.913afc3d.css",
+    "main.js": "/React-Weather/static/js/main.ae9ee392.js",
     "static/media/cloud-image.png": "/React-Weather/static/media/cloud-image.140fd547218f7bed1159.png",
+    "static/media/Snow.png": "/React-Weather/static/media/Snow.6aab2972b99cce9497e0.png",
+    "static/media/Clouds-04dn.png": "/React-Weather/static/media/Clouds-04dn.e1ed92b6073f4cc94d53.png",
+    "static/media/Rain.png": "/React-Weather/static/media/Rain.cfc1c8ddf2b3bcb98cec.png",
+    "static/media/Thunderstorm.png": "/React-Weather/static/media/Thunderstorm.924efdf8249919605183.png",
+    "static/media/Atmosphere.png": "/React-Weather/static/media/Atmosphere.662892eedf911e29e971.png",
+    "static/media/Clear-night.png": "/React-Weather/static/media/Clear-night.9576a19593f7a4f406d5.png",
     "static/media/search-icon.png": "/React-Weather/static/media/search-icon.2ce2a557c3b6fe11e1dd.png",
     "static/media/precipitation-icon.svg": "/React-Weather/static/media/precipitation-icon.6c31dc8d6fd8c5e04bb93a4e9ed5adf7.svg",
+    "static/media/Clear-day.png": "/React-Weather/static/media/Clear-day.0b43f5c98c23439dcf48.png",
     "static/media/thermometer-icon.svg": "/React-Weather/static/media/thermometer-icon.df7f6950c2fdad5b1d789cad490cf937.svg",
-    "static/media/weather-logo.svg": "/React-Weather/static/media/weather-logo.a547bbf9473dbc523f90775634385829.svg",
+    "static/media/weather-logo.svg": "/React-Weather/static/media/weather-logo.ff9be2afb5290f93b383cb13e53602cc.svg",
     "static/media/wind-icon.svg": "/React-Weather/static/media/wind-icon.2ec4294f8a6f4a9afb929205a7f01f67.svg",
     "static/media/humidity-icon.svg": "/React-Weather/static/media/humidity-icon.68d4c1a0f1c0f8e80e41df772f285c2d.svg",
     "index.html": "/React-Weather/index.html",
     "static/media/theme-colors-icon.svg": "/React-Weather/static/media/theme-colors-icon.8f5544cb0ba9a364130dd1a4b1910d28.svg",
-    "main.8e4e415f.css.map": "/React-Weather/static/css/main.8e4e415f.css.map",
-    "main.5ea4fd83.js.map": "/React-Weather/static/js/main.5ea4fd83.js.map"
+    "main.913afc3d.css.map": "/React-Weather/static/css/main.913afc3d.css.map",
+    "main.ae9ee392.js.map": "/React-Weather/static/js/main.ae9ee392.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e4e415f.css",
-    "static/js/main.5ea4fd83.js"
+    "static/css/main.913afc3d.css",
+    "static/js/main.ae9ee392.js"
   ]
 }
