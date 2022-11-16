@@ -5,21 +5,31 @@ import themeInvertIcon from '../../assets/img/clobal-icon/theme-colors-icon.svg'
 import searchIcon from '../../assets/img/clobal-icon/search-icon.png'
 import {connect} from 'react-redux';
 import {storage} from '../../storage/storage';
-import {setCurrentCity, setCurrentTheme} from "../../redux/reducers/initializationReducer";
+import {setCurrentCity, setCurrentTheme} from '../../redux/reducers/initializationReducer';
+import {weatherService} from '../../service/weatherService';
 
 const Header = (props) => {
-    const [cityName, setCityName] = React.useState();
+    const [value, setValue] = React.useState('');
+    const [cityName, setCityName] = React.useState(storage.getItem('city') || 'москва');
 
     const onChangeCityName = (e) => {
-        setCityName(e.currentTarget.value);
+        setValue(e.currentTarget.value);
     };
 
     const onSend = (e) => {
         e.preventDefault();
-        storage.setItem('city', cityName);
-        props.setCurrentCity(cityName);
-        setCityName('');
+        setCityName(value);
+        storage.setItem('city', value === '' ? 'москва' : value);
+        setValue('');
     };
+
+    React.useEffect(() => {
+        const getGeocodingCity = async() => {
+            const {data} = await weatherService.getGeocoding(cityName);
+            return data
+        }
+        getGeocodingCity().then(res => props.setCurrentCity(res)).catch(() => alert('Город не найден!'));
+    },[cityName])
 
     const onChangeTheme = () => {
         if (props.currentTheme === 'light') {
@@ -43,8 +53,8 @@ const Header = (props) => {
         ];
         components.forEach(component => {
             root.style.setProperty(`--${component}-default`, `var(--${component}-${props.currentTheme})`)
-        })
-    },[props.currentTheme])
+        });
+    },[props.currentTheme]);
 
     return (
         <div className={classes.header}>
@@ -57,7 +67,7 @@ const Header = (props) => {
                     <img className={classes.btn_img} src={themeInvertIcon} alt='Смена темы'/>
                 </button>
                 <form className={classes.form}>
-                    <input onChange={onChangeCityName} value={cityName} className={classes.input} placeholder='поиск...' type='text'/>
+                    <input onChange={onChangeCityName} value={value} className={classes.input} placeholder='поиск...' type='text'/>
                     <button onClick={onSend} className={classes.btn} >
                         <img src={searchIcon} alt='Поиск'/>
                     </button>
@@ -70,6 +80,6 @@ const Header = (props) => {
 const mapStateToProps = (state) => {
     return {
         currentTheme: state.initializationReducer.currentTheme
-    }
-}
+    };
+};
 export default connect(mapStateToProps,{setCurrentCity, setCurrentTheme})(Header);

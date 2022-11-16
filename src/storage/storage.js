@@ -8,4 +8,4 @@ export const storage = {
             return JSON.parse(value)
         }
     }
-}
+};

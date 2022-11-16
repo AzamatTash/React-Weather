@@ -1,5 +1,5 @@
-import {createAction, createReducer} from "@reduxjs/toolkit";
-import {weatherService} from "../../service/weatherService";
+import {createAction, createReducer} from '@reduxjs/toolkit';
+import {weatherService} from '../../service/weatherService';
 
 const setDataCards = createAction('setDataCards', ({...data}) => {
     return {payload:{...data}}
@@ -17,9 +17,9 @@ export const forecastReducer = createReducer(initialState, {
         }
         state.list = list;
     },
-})
+});
 
-export const fetchForecast = (cityName) => async (dispatch) => {
-    const response = await weatherService.getForecast(cityName);
+export const fetchForecast = (lat, lon) => async (dispatch) => {
+    const response = await weatherService.getForecast(lat, lon);
     dispatch(setDataCards({...response.data}));
 };

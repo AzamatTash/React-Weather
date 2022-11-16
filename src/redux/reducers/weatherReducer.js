@@ -1,7 +1,7 @@
-import {createAction, createReducer} from "@reduxjs/toolkit";
-import {getTime} from "../../assets/utils/getTime";
-import {getDirectionWind} from "../../assets/utils/getDirectionWind";
-import {weatherService} from "../../service/weatherService";
+import {createAction, createReducer} from '@reduxjs/toolkit';
+import {getTime} from '../../assets/utils/getTime';
+import {getDirectionWind} from '../../assets/utils/getDirectionWind';
+import {weatherService} from '../../service/weatherService';
 
 const setDataCurrentDay = createAction('setDataCurrentDay', ({...data}) => {
     return {payload:{...data}}
@@ -37,9 +37,9 @@ export const weatherReducer = createReducer(initialState, {
         state.weekDay = 'Сегодня';
         state.icon = action.payload.weather[0].icon
     }
-})
+});
 
-export const fetchWeatherCurrentDay = (cityName) => async (dispatch) => {
-    const response = await weatherService.getWeather(cityName);
+export const fetchWeatherCurrentDay = (lat, lon) => async (dispatch) => {
+    const response = await weatherService.getWeather(lat, lon);
     return dispatch(setDataCurrentDay({...response.data}));
 };

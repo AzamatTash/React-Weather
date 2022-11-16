@@ -1,7 +1,7 @@
-import {configureStore, getDefaultMiddleware} from "@reduxjs/toolkit";
-import {weatherReducer} from "./reducers/weatherReducer";
-import {forecastReducer} from "./reducers/forecastReducer";
-import {initializationReducer} from "./reducers/initializationReducer";
+import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit';
+import {weatherReducer} from './reducers/weatherReducer';
+import {forecastReducer} from './reducers/forecastReducer';
+import {initializationReducer} from './reducers/initializationReducer';
 
 const middleware = getDefaultMiddleware({
     immutableCheck: false,

@@ -7,8 +7,8 @@ import getWeatherIcon from "../../assets/img/getWeatherIcon";
 
 const Cards = (props) => {
     React.useEffect(() => {
-        props.fetchForecast(props.currentCity);
-    }, [props.currentCity]);
+        props.fetchForecast(props.lat, props.lon);
+    }, [props.lat, props.lon]);
 
     const cardsElements = props.list.map(card => {
         return (
@@ -27,7 +27,7 @@ const Cards = (props) => {
                 </div>
             </div>
         )
-    })
+    });
 
     return (
         <div className={classes.wrapperMain}>
@@ -38,7 +38,8 @@ const Cards = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        currentCity: state.initializationReducer.currentCity,
+        lat: state.initializationReducer.currentCity.lat,
+        lon: state.initializationReducer.currentCity.lon,
         list: state.forecastReducer.list
     };
 };
