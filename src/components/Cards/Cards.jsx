@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './Cards.module.sass'
-import {fetchForecast} from "../../redux/reducers/forecastReducer";
-import {connect} from "react-redux";
-import {getConvertDate, getConvertTime} from "../../assets/utils/getTime";
-import getWeatherIcon from "../../assets/img/getWeatherIcon";
+import {connect} from 'react-redux';
+import {fetchForecast} from '../../redux/reducers/forecastReducer';
+import {getConvertDate, getConvertTime} from '../../assets/utils/getTime';
+import getWeatherIcon from '../../assets/img/getWeatherIcon';
 
 const Cards = (props) => {
     React.useEffect(() => {
@@ -21,7 +21,7 @@ const Cards = (props) => {
                     <time className={classes.time}>{getConvertTime(card.dt)}</time>
                 </div>
                 <img className={classes.icon} src={getWeatherIcon(card.weather[0].icon)}
-                     alt="icon"/>
+                     alt='icon'/>
                 <div className={classes.footer}>
                     <div className={classes.description}>{card.weather[0].description}</div>
                 </div>

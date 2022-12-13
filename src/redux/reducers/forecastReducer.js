@@ -2,7 +2,7 @@ import {createAction, createReducer} from '@reduxjs/toolkit';
 import {weatherService} from '../../service/weatherService';
 
 const setDataCards = createAction('setDataCards', ({...data}) => {
-    return {payload:{...data}}
+    return {payload:{...data}};
 });
 
 const initialState = {

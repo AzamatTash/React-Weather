@@ -1,22 +1,21 @@
 import React from 'react';
-import classes from './Header.module.sass'
-import logoIcon from '../../assets/img/clobal-icon/weather-logo.svg'
-import themeInvertIcon from '../../assets/img/clobal-icon/theme-colors-icon.svg'
-import searchIcon from '../../assets/img/clobal-icon/search-icon.png'
 import {connect} from 'react-redux';
 import {storage} from '../../storage/storage';
 import {setCurrentCity, setCurrentTheme} from '../../redux/reducers/initializationReducer';
 import {weatherService} from '../../service/weatherService';
+import classes from './Header.module.sass'
+import logoIcon from '../../assets/img/clobal-icon/weather-logo.svg'
+import themeInvertIcon from '../../assets/img/clobal-icon/theme-colors-icon.svg'
+import searchIcon from '../../assets/img/clobal-icon/search-icon.png'
+
 
 const Header = (props) => {
     const [value, setValue] = React.useState('');
     const [cityName, setCityName] = React.useState(storage.getItem('city') || 'москва');
 
-    const onChangeCityName = (e) => {
-        setValue(e.currentTarget.value);
-    };
+    const onChangeCityName = (e) => setValue(e.currentTarget.value);
 
-    const onSend = (e) => {
+    const onClickSendBtn = (e) => {
         e.preventDefault();
         setCityName(value);
         storage.setItem('city', value === '' ? 'москва' : value);
@@ -26,10 +25,10 @@ const Header = (props) => {
     React.useEffect(() => {
         const getGeocodingCity = async() => {
             const {data} = await weatherService.getGeocoding(cityName);
-            return data
+            props.setCurrentCity(data);
         }
-        getGeocodingCity().then(res => props.setCurrentCity(res)).catch(() => alert('Город не найден!'));
-    },[cityName])
+        getGeocodingCity().catch(() => alert('Город не найден!'));
+    },[cityName]);
 
     const onChangeTheme = () => {
         if (props.currentTheme === 'light') {
@@ -52,7 +51,7 @@ const Header = (props) => {
             'btn-next-prev'
         ];
         components.forEach(component => {
-            root.style.setProperty(`--${component}-default`, `var(--${component}-${props.currentTheme})`)
+            root.style.setProperty(`--${component}-default`, `var(--${component}-${props.currentTheme})`);
         });
     },[props.currentTheme]);
 
@@ -68,7 +67,7 @@ const Header = (props) => {
                 </button>
                 <form className={classes.form}>
                     <input onChange={onChangeCityName} value={value} className={classes.input} placeholder='поиск...' type='text'/>
-                    <button onClick={onSend} className={classes.btn} >
+                    <button onClick={onClickSendBtn} className={classes.btn} >
                         <img src={searchIcon} alt='Поиск'/>
                     </button>
                 </form>

@@ -4,7 +4,7 @@ import {getDirectionWind} from '../../assets/utils/getDirectionWind';
 import {weatherService} from '../../service/weatherService';
 
 const setDataCurrentDay = createAction('setDataCurrentDay', ({...data}) => {
-    return {payload:{...data}}
+    return {payload:{...data}};
 });
 
 const initialState = {

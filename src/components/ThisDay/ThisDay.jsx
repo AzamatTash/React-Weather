@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './ThisDay.module.sass'
+import classes from './ThisDay.module.sass';
 import {connect} from 'react-redux';
 import {fetchWeatherCurrentDay} from '../../redux/reducers/weatherReducer';
 import getWeatherIcon from '../../assets/img/getWeatherIcon';
@@ -18,7 +18,7 @@ const ThisDay = (props) => {
                 </div>
                 <div className={classes.itemRight}>
                     <img className={classes.currenWeatherIcon}
-                         src={getWeatherIcon(props.icon)} alt="icon"/>
+                         src={getWeatherIcon(props.icon)} alt='icon'/>
                 </div>
             </div>
             <time className={classes.time}>Время: {props.time}</time>

@@ -15,6 +15,6 @@ const App = () => {
             <Cards/>
         </div>
     );
-}
+};
 
 export default App;
